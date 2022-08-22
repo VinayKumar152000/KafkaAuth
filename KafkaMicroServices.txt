@@ -1,0 +1,45 @@
+Kafka ->  basically used to achievve event driven aysnchronous communication between microservies. Event driven communication
+means microservies communicate and share data whenever an event occur.
+-> microservies are loosely coupled in even driven architecutre.   as they interact with message broker i.e kafka to receive
+or send data.
+
+we have producer which produce the event and which is consumed by the consumer.
+
+advantages of event driven arichtecture->
+imporves flexibility and maintainbility-> as all services are loosely coupled so flexibiltiy improves.
+-> high scalability-> if we need new service  we can create it ,hence we can scale easily.
+
+//commands
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+-> open source,distriubted streaming platform allows us to develop realtime event driven applications.
+-> helps to create applications that continously produce and consume some peice of data.
+->records or request are replicated or paritioned in such a way->allows large volume of users to use application simulatensoulty.
+-> mainstain high level accuarry of data records.
+
+
+**usecases-> 
+helps in decoupling system depenedencies.all the hard integeraitons of systems now gone.(if we share data between multiple systems)
+so basically what happens is that producer of data will  stream an event and the consumer of that events will subscribe to
+that event,than they get info they need and act acordingly.
+
+kafka acts as a message broker to share these events.
+
+reallife uses cases-> messaging app,location tracker,gathering data of multiple users.(makes service fast)
+
+kafka consist of four core api's-> proudcer api-> helps our application to create records or stream of data.
+topic-> ordered list of similar kind of events,topic can be stored for ammount of time we want, until it get consumed by
+consumers.
+
+consumer api-> helps to create consumers-> consumers subsricbe to one or more topics from wich they want data.
+we can send data direclty producer to consumer but if we want that data to get transformed or we want to peform some operaitons
+we use stream api.
+stream api consume data from topic or topics and than it analyse,aggreagate data in realtime prduce data of stream to same
+topic or to a new topic
+
+connector api-> allows us to create connectors which are resuable producers or consumers. (developers can reuse the producers and 
+consumers they just need to configure them with the helpof connector api.
+
+Paritioning-> a single topic get paritioned into mulitple partitions. These paritions tell how much consumer can subscribe to that topic.
+one consumer can subscribe to multiple paritions.
